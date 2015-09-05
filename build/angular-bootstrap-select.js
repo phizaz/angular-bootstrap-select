@@ -8,7 +8,7 @@ angular.module('angular-bootstrap-select.extra', [])
         if (!element.hasClass('selectpicker')) {
           return;
         }
-        
+
         var target = element.parent();
         var toggleFn = function () {
           target.toggleClass('open');
@@ -47,13 +47,14 @@ angular.module('angular-bootstrap-select', [])
             });
           });
 
-          ngModel.$render = function () {
-            scope.$evalAsync(function () {
-              element.selectpicker('refresh');
-            });
-          }
+          // commenting this makes two-way databinding work
+          // ngModel.$render = function () {
+          //   scope.$evalAsync(function () {
+          //     element.selectpicker('refresh');
+          //   });
+          // }
         };
       }
-        
+
     };
   }]);
